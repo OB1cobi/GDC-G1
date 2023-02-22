@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class walk : MonoBehaviour
 {
-
+    #region variables
     [Header("Movement")]
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
@@ -38,6 +38,7 @@ public class walk : MonoBehaviour
     //private CameraHeadBob headBob;
     private Vector3 YAxisGravity;
     private AudioSource audioSource;
+    #endregion
 
     #region Properties
     public bool IsRunning
