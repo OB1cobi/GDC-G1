@@ -115,7 +115,7 @@ public class walk : MonoBehaviour
         prevGrounded = IsGrounded();
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         /* When calculating the moveDirection , the Y velocity always stays 0. 
          As a result the player is falling very slowy. 
