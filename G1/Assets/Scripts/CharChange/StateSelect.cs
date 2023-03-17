@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class StateSelect : MonoBehaviour
 {
- public enum State
+
+    public static StateSelect instance { get; private set; }
+
+    public GameObject[] characters;
+    public Camera[] camera;
+
+    public enum State
     {
         red,
-        blue
+        blue,
         green,
         black, 
         white,
@@ -21,43 +27,89 @@ public class StateSelect : MonoBehaviour
         state = State.red;
     }
 
-    public void SwitchChar(State _state)
+    private void Awake()
     {
-        if (_state == State.red)
+        if (instance != null && instance != this)
         {
-            state = State.red;
-            //movement 
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+
+
+
+    public GameObject GetObjectToMove()
+    {
+        if (state == State.red)
+        {
+            return characters[1];
         }
 
-        if (_state == State.blue)
+        if (state == State.blue)
         {
-            state = State.blue;
-            //movement 
+            return characters[2];
         }
 
-        if (_state == State.green)
+        if (state == State.green)
         {
-            state = State.green;
-            //movement 
+            return characters[3];
         }
 
-        if (_state == State.black)
+        if (state == State.black)
         {
-            state = State.black;
-            //movement 
+            return characters[4];
         }
 
-        if (_state == State.white)
+        if (state == State.white)
         {
-            state = State.white;
-            //movement 
+            return characters[0];
         }
 
-        if (_state == State.board)
+        if (state == State.board)
         {
-            state = State.board;
-            //movement 
+            return characters[5];
         }
+
+        return characters[0];
+    }
+
+    public Camera GetCamToMove()
+    {
+        if (state == State.red)
+        {
+            return camera[1];
+        }
+
+        if (state == State.blue)
+        {
+            return camera[2];
+        }
+
+        if (state == State.green)
+        {
+            return camera[3];
+        }
+
+        if (state == State.black)
+        {
+            return camera[4];
+        }
+
+        if (state == State.white)
+        {
+            return camera[0];
+        }
+
+        if (state == State.board)
+        {
+            return camera[5];
+        }
+
+        return camera[0];
     }
 
 }

@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class walk : MonoBehaviour
 {
+
+
+
+
     #region variables
+    GameObject currentPlayer;
+
     [Header("Movement")]
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
@@ -72,15 +78,21 @@ public class walk : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        _capsule = GetComponent<CapsuleCollider>();
-        //headBob = transform.GetComponentInChildren<CameraHeadBob>();
-        audioSource = GetComponent<AudioSource>();
+        //rb = GetComponent<Rigidbody>();
+        //_capsule = GetComponent<CapsuleCollider>();
+        
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentPlayer = StateSelect.instance.GetObjectToMove();
+        rb = currentPlayer.GetComponent<Rigidbody>();
+        _capsule = currentPlayer.GetComponent<CapsuleCollider>();
+        
+        audioSource = currentPlayer.GetComponent<AudioSource>();
+
         //jumping
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && jumpingEnabled && canJump)
         {

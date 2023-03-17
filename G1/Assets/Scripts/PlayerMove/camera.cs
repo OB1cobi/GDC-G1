@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
-
+    GameObject currentPlayer;
     //camera public values
     public float XMinRotation;
     public float XMaxRotation;
@@ -26,6 +26,11 @@ public class camera : MonoBehaviour
 
     private void Update()
     {
+        //currentCamera = StateSelect.instance.GetCamToMove();
+        currentPlayer = StateSelect.instance.GetObjectToMove();
+        cam = currentPlayer.GetComponentInChildren<Camera>();
+
+
         rotAroundX += Input.GetAxis("Mouse Y") * Xsensitivity;
         rotAroundY += Input.GetAxis("Mouse X") * Ysensitivity;
 
@@ -37,7 +42,7 @@ public class camera : MonoBehaviour
 
     private void CameraRotation()
     {
-        transform.parent.rotation = Quaternion.Euler(0, rotAroundY, 0); // rotation of parent (player body)
+        currentPlayer.transform.rotation = Quaternion.Euler(0, rotAroundY, 0); // rotation of parent (player body)
         cam.transform.rotation = Quaternion.Euler(-rotAroundX, rotAroundY, 0); // rotation of Camera
     }
 
