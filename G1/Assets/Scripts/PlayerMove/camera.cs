@@ -27,7 +27,7 @@ public class camera : MonoBehaviour
     private void Update()
     {
         //currentCamera = StateSelect.instance.GetCamToMove();
-        currentPlayer = StateSelect.instance.GetObjectToMove();
+       
         cam = currentPlayer.GetComponentInChildren<Camera>();
 
 

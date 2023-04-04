@@ -87,7 +87,7 @@ public class walk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentPlayer = StateSelect.instance.GetObjectToMove();
+        
         rb = currentPlayer.GetComponent<Rigidbody>();
         _capsule = currentPlayer.GetComponent<CapsuleCollider>();
         
