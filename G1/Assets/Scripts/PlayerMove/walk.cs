@@ -88,10 +88,10 @@ public class walk : MonoBehaviour
     void Update()
     {
         
-        rb = currentPlayer.GetComponent<Rigidbody>();
-        _capsule = currentPlayer.GetComponent<CapsuleCollider>();
+        rb = GetComponent<Rigidbody>();
+        _capsule = GetComponent<CapsuleCollider>();
         
-        audioSource = currentPlayer.GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
         //jumping
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && jumpingEnabled && canJump)

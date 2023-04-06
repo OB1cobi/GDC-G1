@@ -28,7 +28,7 @@ public class camera : MonoBehaviour
     {
         //currentCamera = StateSelect.instance.GetCamToMove();
        
-        cam = currentPlayer.GetComponentInChildren<Camera>();
+        cam = GetComponentInChildren<Camera>();
 
 
         rotAroundX += Input.GetAxis("Mouse Y") * Xsensitivity;
@@ -42,7 +42,7 @@ public class camera : MonoBehaviour
 
     private void CameraRotation()
     {
-        currentPlayer.transform.rotation = Quaternion.Euler(0, rotAroundY, 0); // rotation of parent (player body)
+        transform.rotation = Quaternion.Euler(0, rotAroundY, 0); // rotation of parent (player body)
         cam.transform.rotation = Quaternion.Euler(-rotAroundX, rotAroundY, 0); // rotation of Camera
     }
 

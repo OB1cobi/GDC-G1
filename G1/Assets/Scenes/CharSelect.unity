@@ -366,6 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243630977}
   - component: {fileID: 243630978}
+  - component: {fileID: 243630979}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Untagged
@@ -421,6 +422,26 @@ MonoBehaviour:
   - {fileID: 5223438651749570060}
   - {fileID: 4532050398140133039}
   selectedCam: 0
+--- !u!114 &243630979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243630976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c564ee2d48aea4babde68a1a2f17c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &250851194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1584,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1938413128}
-  - component: {fileID: 1938413127}
   m_Layer: 0
   m_Name: Husks
   m_TagString: Untagged
@@ -1571,28 +1591,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1938413127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938413126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92acd4e13486de549b166063c028ed8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 866959583}
-  - {fileID: 1278380374236619031}
-  - {fileID: 4155280056722942296}
-  - {fileID: 5288045831651517721}
-  - {fileID: 7217231883775253779}
-  - {fileID: 2685078142311853084}
-  selectedChar: 0
-  cammy: []
-  selectedCam: 0
 --- !u!4 &1938413128
 Transform:
   m_ObjectHideFlags: 0
@@ -1855,30 +1853,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1278380374236619017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278380374236619031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b11ecaa9217874290a9e23e5267c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 5
-  jumpingEnabled: 1
-  jumpSpeed: 13
-  fallRate: 0.5
-  slopLimitEnabled: 0
-  slopeLimit: 35
-  footstepClip: {fileID: 0}
-  landingClip: {fileID: 0}
-  jumpingClip: {fileID: 0}
-  footstepsVol: 0
-  footstepspitch: 0
 --- !u!33 &1278380374236619018
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1972,7 +1946,6 @@ GameObject:
   - component: {fileID: 1278380374236619018}
   - component: {fileID: 1278380374236619019}
   - component: {fileID: 1278380374236619016}
-  - component: {fileID: 1278380374236619017}
   - component: {fileID: 1278380374236619030}
   m_Layer: 0
   m_Name: WhiteHusk
@@ -2170,30 +2143,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2081738057868942476, guid: 7f5dfa03573438948a580a39be7919b3, type: 3}
   m_PrefabInstance: {fileID: 2081738057530955878}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2428296603881668411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4155280056722942296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b11ecaa9217874290a9e23e5267c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 5
-  jumpingEnabled: 1
-  jumpSpeed: 13
-  fallRate: 0.5
-  slopLimitEnabled: 0
-  slopeLimit: 35
-  footstepClip: {fileID: 0}
-  landingClip: {fileID: 0}
-  jumpingClip: {fileID: 0}
-  footstepsVol: 0
-  footstepspitch: 0
 --- !u!1001 &2527396837034929910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2273,7 +2222,6 @@ GameObject:
   - component: {fileID: 2685078142311853089}
   - component: {fileID: 2685078142311853090}
   - component: {fileID: 2685078142311853095}
-  - component: {fileID: 6595619472306252710}
   m_Layer: 0
   m_Name: BlackHusk
   m_TagString: black
@@ -2389,7 +2337,6 @@ GameObject:
   - component: {fileID: 4155280056722942303}
   - component: {fileID: 4155280056722942302}
   - component: {fileID: 4155280056722942301}
-  - component: {fileID: 2428296603881668411}
   m_Layer: 0
   m_Name: RedHusk
   m_TagString: red
@@ -2736,7 +2683,6 @@ GameObject:
   - component: {fileID: 5288045831651517702}
   - component: {fileID: 5288045831651517703}
   - component: {fileID: 5288045831651517700}
-  - component: {fileID: 6428639816889185681}
   m_Layer: 0
   m_Name: BlueHusk
   m_TagString: blue
@@ -2744,78 +2690,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5979111692590589942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7217231883775253779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b11ecaa9217874290a9e23e5267c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 5
-  jumpingEnabled: 1
-  jumpSpeed: 13
-  fallRate: 0.5
-  slopLimitEnabled: 0
-  slopeLimit: 35
-  footstepClip: {fileID: 0}
-  landingClip: {fileID: 0}
-  jumpingClip: {fileID: 0}
-  footstepsVol: 0
-  footstepspitch: 0
---- !u!114 &6428639816889185681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5288045831651517721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b11ecaa9217874290a9e23e5267c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 5
-  jumpingEnabled: 1
-  jumpSpeed: 13
-  fallRate: 0.5
-  slopLimitEnabled: 0
-  slopeLimit: 35
-  footstepClip: {fileID: 0}
-  landingClip: {fileID: 0}
-  jumpingClip: {fileID: 0}
-  footstepsVol: 0
-  footstepspitch: 0
---- !u!114 &6595619472306252710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2685078142311853084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b11ecaa9217874290a9e23e5267c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 5
-  jumpingEnabled: 1
-  jumpSpeed: 13
-  fallRate: 0.5
-  slopLimitEnabled: 0
-  slopeLimit: 35
-  footstepClip: {fileID: 0}
-  landingClip: {fileID: 0}
-  jumpingClip: {fileID: 0}
-  footstepsVol: 0
-  footstepspitch: 0
 --- !u!1 &7217231883775253779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,7 +2703,6 @@ GameObject:
   - component: {fileID: 7217231883775253790}
   - component: {fileID: 7217231883775253789}
   - component: {fileID: 7217231883775253784}
-  - component: {fileID: 5979111692590589942}
   m_Layer: 0
   m_Name: GreenHusk
   m_TagString: green
