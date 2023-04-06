@@ -69,6 +69,7 @@ public class CharSelect : MonoBehaviour
 
         cammy[selectedCam].SetActive(true); // finally set active cam as true
         cammy[0].SetActive(false); // sets the char select cam as false
+        characters[0].SetActive(false); // same thing ^
 
     }
 
