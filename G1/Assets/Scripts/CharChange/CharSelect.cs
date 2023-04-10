@@ -6,12 +6,16 @@ public class CharSelect : MonoBehaviour
 {
     public GameObject[] characters; // list of characters to be selected
     public int selectedChar = 0;
-    public GameObject[] cammy;
+    public GameObject[] cammy; // list of cameras to activate
     public int selectedCam;
+    public GameObject[] selectionArrow; // arrow over characters head to give visual selection
+    public int arrow;
+
 
     private void Start()
     {
         PlayerPrefs.SetInt("selectedCam", 0);
+        PlayerPrefs.SetInt("selectedArrow", 0);
     }
     public void NextChar()
     {
@@ -24,6 +28,9 @@ public class CharSelect : MonoBehaviour
         cammy[selectedCam].SetActive(false); // set current cam as false
         selectedCam = (selectedCam + 1) % cammy.Length; // moves up one in the list of cammy's (cameras)
         //cammy[selectedCam].SetActive(true); // activates new camera
+
+        //arrow to show next character 
+        arrow[selectionArrow].setactive(false);
     }
 
     public void PreviousCharacter()
