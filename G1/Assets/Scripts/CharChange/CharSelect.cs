@@ -1,23 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharSelect : MonoBehaviour
 {
     public GameObject[] characters; // list of characters to be selected
-    public int selectedChar = 0;
+    public int selectedChar = 0; // I made this zero to start because it made sense to me...
     public GameObject[] cammy; // list of cameras to activate
     public int selectedCam;
     public GameObject[] arrow; // arrow over characters head to give visual selection
     public int selectedArrow;
-    
+    public bool instON;
+    public GameObject Insts;
     
 
 
     private void Start()
     {
-        PlayerPrefs.SetInt("selectedCam", 0);
-        //PlayerPrefs.SetInt("selectedArrow", 0);
+        PlayerPrefs.SetInt("selectedCam", 0); // starts you at cam 0 (the char select cam)
+        //PlayerPrefs.SetInt("selectedArrow", 0); // starts you on arrow 0 (Im doing this for formatting sake)
+        instON = true;
+       
+    }
+
+    private void Update()
+    {
+        if (instON == false)
+        {
+            Insts.SetActive(false);
+        }
     }
     public void NextChar()
     {
@@ -30,18 +42,19 @@ public class CharSelect : MonoBehaviour
         cammy[selectedCam].SetActive(false); // set current cam as false
         selectedCam = (selectedCam + 1) % cammy.Length; // moves up one in the list of cammy's (cameras)
         //cammy[selectedCam].SetActive(true); // activates new camera
+        cammy[0].SetActive(true); // sets cam 0 as true at the end (char select screen)
 
         //arrow to show next character 
-        arrow[selectedArrow].SetActive(false);
-        selectedArrow = (selectedArrow + 1) % arrow.Length;
-
+        arrow[selectedArrow].SetActive(false); // set current arrow as false (turning it off)
+        selectedArrow = (selectedArrow + 1) % arrow.Length; // chooses next arrow in the list
+        arrow[selectedArrow].SetActive(true); // activates the new arrow
 
     }
 
     public void PreviousCharacter()
     {
         //player prev activation
-        characters[selectedChar].SetActive(false); // sets current character as false
+        characters[selectedChar].SetActive(false); // setws current character as false
         selectedChar--;
         if (selectedChar < 0)
         {
@@ -56,8 +69,17 @@ public class CharSelect : MonoBehaviour
         {
             selectedCam += cammy.Length; // moves back one in the list of cammy's (cameras)
         }
-       // cammy[selectedCam].SetActive(true); //sets current cam as true
+        // cammy[selectedCam].SetActive(true); //sets current cam as true
+        cammy[0].SetActive(true); // sets cam 0 as true at the end (char select screen)
 
+        //arrow to show prev character
+        arrow[selectedArrow].SetActive(false); // setws current arrow as false
+        selectedArrow--; // third time around and I still dont know what this does lmao
+        if (selectedArrow < 0)
+        {
+            selectedArrow += arrow.Length; // moves one back in the list of arrows (selects prev)
+        }
+        arrow[selectedArrow].SetActive(true); // sets current arrow as true!!
     }
 
     public void Selected__()
@@ -78,11 +100,18 @@ public class CharSelect : MonoBehaviour
         {
             PlayerPrefs.SetInt("selectedCam", 1);
         }
+        // it doesnt seem to work for me but ill fix it later
+
+        PlayerPrefs.SetInt("selectedArrow", selectedArrow);
+       
 
         cammy[selectedCam].SetActive(true); // finally set active cam as true
         cammy[0].SetActive(false); // sets the char select cam as false
         characters[0].SetActive(false); // same thing ^
         characters[selectedChar].SetActive(true);
+        arrow[selectedArrow].SetActive(false);
+        instON = false;
+
 
     }
 
