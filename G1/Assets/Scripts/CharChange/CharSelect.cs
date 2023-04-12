@@ -13,15 +13,18 @@ public class CharSelect : MonoBehaviour
     public int selectedArrow;
     public bool instON;
     public GameObject Insts;
-    
-
+    public GameObject[] buttons;
 
     private void Start()
     {
+        foreach (GameObject button in buttons)
+        {
+            button.SetActive(true); // turns all the ui buttons on, for choosing char
+        }
+
         PlayerPrefs.SetInt("selectedCam", 0); // starts you at cam 0 (the char select cam)
-        //PlayerPrefs.SetInt("selectedArrow", 0); // starts you on arrow 0 (Im doing this for formatting sake)
+        PlayerPrefs.SetInt("selectedArrow", 0); // starts you on arrow 0 (Im doing this for formatting sake)
         instON = true;
-       
     }
 
     private void Update()
@@ -92,6 +95,7 @@ public class CharSelect : MonoBehaviour
         if (selectedChar == 0)
         {
             PlayerPrefs.SetInt("selectedChar", 1);
+            Selected__();
         }
 
         // same thing as character one but with cams
@@ -99,6 +103,7 @@ public class CharSelect : MonoBehaviour
         if (selectedCam == 0)
         {
             PlayerPrefs.SetInt("selectedCam", 1);
+            //Selected__();
         }
         // it doesnt seem to work for me but ill fix it later
 
@@ -108,10 +113,14 @@ public class CharSelect : MonoBehaviour
         cammy[selectedCam].SetActive(true); // finally set active cam as true
         cammy[0].SetActive(false); // sets the char select cam as false
         characters[0].SetActive(false); // same thing ^
-        characters[selectedChar].SetActive(true);
-        arrow[selectedArrow].SetActive(false);
+        characters[selectedChar].SetActive(true); // sets current character as active
+        arrow[selectedArrow].SetActive(false); // turns off arrows
         instON = false;
-
+        
+        foreach (GameObject button in buttons)
+        {
+            button.SetActive(false); // turns all the ui buttons off, for choosing char
+        }
 
     }
 
