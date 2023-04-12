@@ -643,6 +643,10 @@ MonoBehaviour:
   selectedArrow: 0
   instON: 0
   Insts: {fileID: 1204094491}
+  buttons:
+  - {fileID: 1450599771}
+  - {fileID: 863335172}
+  - {fileID: 501871774}
 --- !u!114 &243630979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,14 +659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c564ee2d48aea4babde68a1a2f17c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  SpawnPoint: {fileID: 2040555192}
 --- !u!1 &250851194
 GameObject:
   m_ObjectHideFlags: 0

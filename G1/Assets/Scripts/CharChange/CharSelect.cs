@@ -95,7 +95,7 @@ public class CharSelect : MonoBehaviour
         if (selectedChar == 0)
         {
             PlayerPrefs.SetInt("selectedChar", 1);
-            Selected__();
+            
         }
 
         // same thing as character one but with cams
@@ -103,7 +103,7 @@ public class CharSelect : MonoBehaviour
         if (selectedCam == 0)
         {
             PlayerPrefs.SetInt("selectedCam", 1);
-            //Selected__();
+            
         }
         // it doesnt seem to work for me but ill fix it later
 
