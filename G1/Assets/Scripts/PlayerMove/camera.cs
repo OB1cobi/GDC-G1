@@ -14,7 +14,8 @@ public class camera : MonoBehaviour
     public float Ysensitivity;
     private Camera cam;
     private float rotAroundX, rotAroundY;
-    
+    public Transform capsule;
+
 
     // Use this for initialization
     void Start()
@@ -42,6 +43,7 @@ public class camera : MonoBehaviour
 
     private void CameraRotation()
     {
+        capsule.transform.rotation = Quaternion.Euler(0, rotAroundY, 0); // rotation of parent (player body)
         transform.rotation = Quaternion.Euler(0, rotAroundY, 0); // rotation of parent (player body)
         cam.transform.rotation = Quaternion.Euler(-rotAroundX, rotAroundY, 0); // rotation of Camera
     }

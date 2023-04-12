@@ -11,8 +11,8 @@ public class CharSelect : MonoBehaviour
     public int selectedCam;
     public GameObject[] arrow; // arrow over characters head to give visual selection
     public int selectedArrow;
-    public bool instON;
-    public GameObject Insts;
+    //public bool instON; // old line for ui text turning off and on, might use later
+    //public GameObject Insts; // old line for ui text turning off and on, might use later
     public GameObject[] buttons;
 
     private void Start()
@@ -24,15 +24,22 @@ public class CharSelect : MonoBehaviour
 
         PlayerPrefs.SetInt("selectedCam", 0); // starts you at cam 0 (the char select cam)
         PlayerPrefs.SetInt("selectedArrow", 0); // starts you on arrow 0 (Im doing this for formatting sake)
-        instON = true;
+        //instON = true; // old line for ui text turning off and on, might use later
+        NextChar(); 
+        NextChar();
+        NextChar(); //I cycle through the characters 5 times in order to despawn them (if your confused remove it and look what happens)
+        NextChar();
+        NextChar();
+        NextChar();
+
     }
 
     private void Update()
     {
-        if (instON == false)
-        {
-            Insts.SetActive(false);
-        }
+        /*if (instON == false)
+        //{
+        //  Insts.SetActive(false); // old line for ui text turning off and on, might use later
+        }*/
     }
     public void NextChar()
     {
@@ -115,7 +122,7 @@ public class CharSelect : MonoBehaviour
         characters[0].SetActive(false); // same thing ^
         characters[selectedChar].SetActive(true); // sets current character as active
         arrow[selectedArrow].SetActive(false); // turns off arrows
-        instON = false;
+        //instON = false; // old line for ui text turning off and on, might use later
         
         foreach (GameObject button in buttons)
         {
