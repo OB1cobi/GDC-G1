@@ -78,8 +78,8 @@ public class walk : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
-        //_capsule = GetComponent<CapsuleCollider>();
+        rb = GetComponent<Rigidbody>();
+        _capsule = GetComponent<CapsuleCollider>();
         
         //audioSource = GetComponent<AudioSource>();
     }
@@ -88,8 +88,8 @@ public class walk : MonoBehaviour
     void Update()
     {
         
-        rb = GetComponent<Rigidbody>();
-        _capsule = GetComponent<CapsuleCollider>();
+        //rb = GetComponent<Rigidbody>();
+        //_capsule = GetComponent<CapsuleCollider>();
         
         audioSource = GetComponent<AudioSource>();
 
@@ -101,17 +101,19 @@ public class walk : MonoBehaviour
             PlayJumpingSound();
         }
 
-        horizontalMovement = 0; verticalMovement = 0;
+        //horizontalMovement = 0; verticalMovement = 0;
 
-        //Calculate FPcontroller movement direction through WASD and arrows Input
+        //Calculate movement direction through WASD and arrows Input
         if (AllowMovement(transform.right * Input.GetAxis("Horizontal")))
         {
             horizontalMovement = Input.GetAxis("Horizontal");
         }
+       
         if (AllowMovement(transform.forward * Input.GetAxis("Vertical")))
         {
             verticalMovement = Input.GetAxis("Vertical");
         }
+        
         //normalize vector so movement in two axis simultanesly is balanced.
         moveDirection = (horizontalMovement * transform.right + verticalMovement * transform.forward).normalized;
 
