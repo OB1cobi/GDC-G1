@@ -81,7 +81,7 @@ public class walk : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         _capsule = GetComponent<CapsuleCollider>();
         
-        //audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -169,19 +169,12 @@ public class walk : MonoBehaviour
     #region Sounds
     public void PlayFootStepsSound()
     {
-        if (IsGrounded() && rb.velocity.magnitude > 5.0f && !audioSource.isPlaying)
+        if (IsGrounded() && rb.velocity.magnitude > 2.0f && !audioSource.isPlaying)
         {
-            if (IsRunning)
-            {
-                audioSource.volume = footstepsVol;
-                //audioSource.pitch = Random.Range(footstepspitch, footstepspitch + 0.15f);
-                audioSource.pitch = footstepspitch;
-            }
-            else
-            {
-                audioSource.volume = footstepsVol / 2;
-                audioSource.pitch = .8f;
-            }
+           
+            
+            audioSource.volume = footstepsVol / 2;
+            audioSource.pitch = .8f;
 
             audioSource.PlayOneShot(footstepClip);
         }

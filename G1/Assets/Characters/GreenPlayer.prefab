@@ -151,7 +151,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5223438650880536809}
   - component: {fileID: 5223438650880536814}
-  - component: {fileID: 5223438650880536815}
   - component: {fileID: 5223438650880536808}
   m_Layer: 0
   m_Name: GreenCam
@@ -218,14 +217,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5223438650880536815
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5223438650880536810}
-  m_Enabled: 1
 --- !u!114 &5223438650880536808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +233,4 @@ MonoBehaviour:
   XMaxRotation: 90
   Xsensitivity: 2
   Ysensitivity: 2
+  capsule: {fileID: 0}

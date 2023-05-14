@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1820027207291058084}
   - component: {fileID: 1820027207291058089}
-  - component: {fileID: 1820027207291058086}
   - component: {fileID: 1820027207291058087}
   m_Layer: 0
   m_Name: cam
@@ -77,14 +76,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1820027207291058086
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820027207291058085}
-  m_Enabled: 1
 --- !u!114 &1820027207291058087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +92,7 @@ MonoBehaviour:
   XMaxRotation: 90
   Xsensitivity: 2
   Ysensitivity: 2
+  capsule: {fileID: 0}
 --- !u!1 &1820027207702454127
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +104,6 @@ GameObject:
   - component: {fileID: 1820027207702454133}
   - component: {fileID: 1820027207702454130}
   - component: {fileID: 1820027207702454131}
-  - component: {fileID: 9151993926407967242}
   - component: {fileID: 1820027207702454128}
   - component: {fileID: 1820027207702454129}
   - component: {fileID: 1820027207702454126}
@@ -189,28 +180,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9151993926407967242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820027207702454127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c8e5b71f41e1d4680990c61913d7b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerModel: {fileID: 0}
-  speed: 2
-  stopStrength: 0.3
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  coyoteTime: 0
-  physCollider: {fileID: 0}
-  slipperyMaterial: {fileID: 0}
-  stickyMaterial: {fileID: 0}
 --- !u!136 &1820027207702454128
 CapsuleCollider:
   m_ObjectHideFlags: 0

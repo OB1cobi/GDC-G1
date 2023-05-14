@@ -11,6 +11,6 @@ public class redSpin : MonoBehaviour
     {
         //rotates object to make it spin
         transform.Rotate(0f, speed * Time.deltaTime, 0f, Space.Self);
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 }

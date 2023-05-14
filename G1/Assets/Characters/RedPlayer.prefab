@@ -151,7 +151,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2081738057868942477}
   - component: {fileID: 2081738057868942472}
-  - component: {fileID: 2081738057868942475}
   - component: {fileID: 2081738057868942474}
   m_Layer: 0
   m_Name: RedCam
@@ -218,14 +217,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2081738057868942475
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081738057868942476}
-  m_Enabled: 1
 --- !u!114 &2081738057868942474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +233,4 @@ MonoBehaviour:
   XMaxRotation: 90
   Xsensitivity: 2
   Ysensitivity: 2
+  capsule: {fileID: 0}
