@@ -23,6 +23,7 @@ public class camera : MonoBehaviour
         cam = this.GetComponent<Camera>();
         rotAroundX = transform.eulerAngles.x;
         rotAroundY = transform.eulerAngles.y;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

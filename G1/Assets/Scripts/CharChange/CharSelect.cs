@@ -14,6 +14,7 @@ public class CharSelect : MonoBehaviour
     //public bool instON; // old line for ui text turning off and on, might use later
     //public GameObject Insts; // old line for ui text turning off and on, might use later
     public GameObject[] buttons;
+    public GameObject spawnPoints;
 
     private void Start()
     {
@@ -40,7 +41,32 @@ public class CharSelect : MonoBehaviour
         //{
         //  Insts.SetActive(false); // old line for ui text turning off and on, might use later
         }*/
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenMenu();
+        }
     }
+
+    public void OpenMenu()
+    {
+        PlayerPrefs.SetInt("selectedCam", 0); // starts you at cam 0 (the char select cam)
+        PlayerPrefs.SetInt("selectedArrow", 0); // starts you on arrow 0 (Im doing this for formatting sake)
+        NextChar();
+        NextChar();
+        NextChar(); //I cycle through the characters 5 times in order to despawn them (if your confused remove it and look what happens)
+        NextChar();
+        NextChar();
+        NextChar();
+        foreach (GameObject button in buttons)
+        {
+            button.SetActive(true); // turns all the ui buttons on, for choosing char
+        }
+        Cursor.lockState = CursorLockMode.None;
+
+        characters[selectedChar].transform.position = new Vector3(spawnPoints.transform.position.x, spawnPoints.transform.position.y + 3, spawnPoints.transform.position.z);
+    }
+
     public void NextChar()
     {
         //player next activation
@@ -128,6 +154,8 @@ public class CharSelect : MonoBehaviour
         {
             button.SetActive(false); // turns all the ui buttons off, for choosing char
         }
+
+
 
     }
 
