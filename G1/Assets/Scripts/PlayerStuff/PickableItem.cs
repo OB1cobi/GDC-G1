@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,5 +22,10 @@ public class PickableItem : MonoBehaviour
     {
         // Get reference to the rigidbody
         rb = GetComponent<Rigidbody>();
+    }
+
+    internal static void AddForce(Vector3 vector3)
+    {
+        throw new NotImplementedException();
     }
 }

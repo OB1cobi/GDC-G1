@@ -54,6 +54,11 @@ public class Grab : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Throw(pickedItem);
+        }
     }
 
     // Method for picking up item
@@ -75,7 +80,7 @@ public class Grab : MonoBehaviour
         item.transform.localEulerAngles = Vector3.zero;
     }
     // Method for dropping item
-    private void DropItem(PickableItem item)
+    public void DropItem(PickableItem item)
     {
         // Remove reference
         pickedItem = null;
@@ -88,5 +93,14 @@ public class Grab : MonoBehaviour
 
         // Add force to throw item a little bit
         item.Rb.AddForce(item.transform.forward * 2, ForceMode.VelocityChange);
+    }
+
+    public void Throw(PickableItem item)
+    {
+        
+        DropItem(pickedItem);
+        item.Rb.AddForce(item.transform.forward * 20, ForceMode.VelocityChange); // shoots item forward
+        item.Rb.AddForce(item.transform.up * 6, ForceMode.VelocityChange); // pushes item upward a little
+
     }
 }
