@@ -12,8 +12,8 @@ public class Breakable : MonoBehaviour
         Destroy(gameObject);
     }
 
-    if (collision.gameObject.tag == "Enemy")
-    {
+  //  if (collision.gameObject.tag == "Enemy")
+   // {
        
-    }
+   // }
 }
