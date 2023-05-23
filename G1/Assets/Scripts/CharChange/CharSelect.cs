@@ -15,6 +15,7 @@ public class CharSelect : MonoBehaviour
     //public GameObject Insts; // old line for ui text turning off and on, might use later
     public GameObject[] buttons;
     public GameObject spawnPoints;
+    public GameObject whiteSpawn;
 
     private void Start()
     {
@@ -64,7 +65,11 @@ public class CharSelect : MonoBehaviour
         }
         Cursor.lockState = CursorLockMode.None;
 
-        characters[selectedChar].transform.position = new Vector3(spawnPoints.transform.position.x, spawnPoints.transform.position.y + 3, spawnPoints.transform.position.z);
+
+       
+
+
+        
     }
 
     public void NextChar()
@@ -155,7 +160,16 @@ public class CharSelect : MonoBehaviour
             button.SetActive(false); // turns all the ui buttons off, for choosing char
         }
 
+        
 
+        if (selectedChar == 1)
+        {
+            transform.position = new Vector3(whiteSpawn.transform.position.x, whiteSpawn.transform.position.y + 1, whiteSpawn.transform.position.z);
+        }
+        else
+        {
+            characters[selectedChar].transform.position = new Vector3(spawnPoints.transform.position.x, spawnPoints.transform.position.y + 1, spawnPoints.transform.position.z);
+        }
 
     }
 
