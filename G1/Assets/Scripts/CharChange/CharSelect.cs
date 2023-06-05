@@ -164,7 +164,7 @@ public class CharSelect : MonoBehaviour
 
         if (selectedChar == 1)
         {
-            transform.position = new Vector3(whiteSpawn.transform.position.x, whiteSpawn.transform.position.y + 1, whiteSpawn.transform.position.z);
+            transform.position = whiteSpawn.transform.position;
         }
         else
         {
